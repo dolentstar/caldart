@@ -1,3 +1,5 @@
+// Limiti sugli input numerici: valori fuori scala tornano nel range invece di rompere la grafica.
+(function(){function c(e,full){var i=e.target;if(!i||i.type!=='number'&&i.type!=='range')return;var v=parseFloat(i.value),lo=parseFloat(i.min),hi=parseFloat(i.max);if(isNaN(v)){if(full&&!isNaN(lo))i.value=lo;return}if(!isNaN(hi)&&v>hi)i.value=hi;else if(full&&!isNaN(lo)&&v<lo)i.value=lo}document.addEventListener('input',function(e){c(e,false)},true);document.addEventListener('change',function(e){c(e,true)},true);document.addEventListener('focusout',function(e){var i=e.target;if(i&&i.type==='number'){c(e,true);i.dispatchEvent(new Event('input',{bubbles:true}))}},true)})();
 (() => {
   const G = window.GABBIE, $ = s => document.querySelector(s);
   const svg = $('#disegno'), lista = $('#lista'), q = $('#q'), qta = $('#qta');
