@@ -1,0 +1,133 @@
+:root {
+  --carta: #EDEFEA;
+  --grafite: #1C2320;
+  --verde: #1F6B3C;
+  --verde-scuro: #164F2C;
+  --acetalica: #FAF8F1;
+  --nylon: #D8CFB8;
+  --quota: #7C8A83;
+  --riga: #CBD1CB;
+  --titoli: 'Barlow Condensed', 'Arial Narrow', sans-serif;
+  --testo: 'Barlow', system-ui, sans-serif;
+}
+[hidden] { display: none !important; }
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 72px; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body { margin: 0; background: var(--carta); color: var(--grafite); font: 400 1.0625rem/1.55 var(--testo); font-variant-numeric: tabular-nums; -webkit-font-smoothing: antialiased; padding-bottom: 64px; }
+a { color: var(--verde); }
+:focus-visible { outline: 3px solid var(--verde); outline-offset: 3px; }
+h1, h2 { font-family: var(--titoli); font-weight: 700; line-height: 1.02; letter-spacing: -.01em; text-wrap: balance; margin: 0 0 .5em; }
+h1 { font-size: clamp(2.5rem, 9vw, 4.6rem); }
+h2 { font-size: clamp(2rem, 6vw, 3.1rem); max-width: 20ch; }
+section { padding: 56px 16px; max-width: 1180px; margin: 0 auto; }
+
+.top { position: sticky; top: 0; z-index: 5; display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 10px 16px; background: rgba(237, 239, 234, .92); backdrop-filter: blur(8px); border-bottom: 1px solid var(--riga); }
+.logo { font: 700 1.6rem/1 var(--titoli); color: var(--verde); text-decoration: none; display: flex; align-items: baseline; gap: 10px; letter-spacing: .02em; }
+.logo span { font: 500 .8rem var(--testo); color: var(--quota); letter-spacing: 0; }
+.top nav { display: none; gap: 24px; }
+.top nav a { color: var(--grafite); text-decoration: none; font-weight: 500; }
+.top nav a:hover { color: var(--verde); }
+
+/* Apertura e catalogo */
+.hero { display: grid; gap: 28px; grid-template-areas: "testo" "tavola" "elenco"; padding-top: 32px; }
+.hero-text { grid-area: testo; }
+.lead { font-size: 1.125rem; max-width: 52ch; margin: 0 0 24px; }
+.cerca span { display: block; font-weight: 600; font-size: .95rem; margin-bottom: 6px; }
+.cerca input { width: 100%; font: 500 1.25rem var(--testo); padding: 14px 16px; border: 2px solid var(--grafite); border-radius: 6px; background: var(--acetalica); color: var(--grafite); }
+.cerca input:focus { outline: none; border-color: var(--verde); box-shadow: 0 0 0 3px rgba(31, 107, 60, .25); }
+.filtri { display: flex; gap: 8px; margin-top: 12px; flex-wrap: wrap; }
+.filtri button { font: 500 1rem var(--testo); min-height: 44px; padding: 0 16px; border-radius: 22px; border: 1.5px solid var(--grafite); background: transparent; color: var(--grafite); cursor: pointer; }
+.filtri button[aria-pressed="true"] { background: var(--grafite); color: var(--carta); }
+
+.tavola { grid-area: tavola; margin: 0; background: var(--acetalica); border: 1.5px solid var(--grafite); border-radius: 6px; padding: 16px; background-image: linear-gradient(var(--carta) 1px, transparent 1px), linear-gradient(90deg, var(--carta) 1px, transparent 1px); background-size: 20px 20px; }
+#disegno { width: 100%; height: auto; display: block; max-height: 56vh; }
+.corpo { fill: #2B3430; stroke: var(--grafite); stroke-width: 1.6; }
+.corpo.nylon { fill: #CDBF98; }
+.tasca circle { fill: #4A5550; stroke: #8E9A94; stroke-width: 1; }
+.tasca.nylon circle { fill: #E6DDC4; stroke: #8D7F5C; }
+.centro { fill: none; stroke: var(--quota); stroke-dasharray: 6 4 1 4; stroke-width: 1; }
+.asse line { stroke: var(--quota); stroke-width: 1; stroke-dasharray: 14 4 2 4; }
+.sfera { fill: #B9C0BC; stroke: var(--grafite); stroke-width: 1.4; }
+.quota line { stroke: var(--verde); stroke-width: 1.2; }
+.quota text { fill: var(--verde); font: 600 17px var(--testo); text-anchor: middle; }
+.sel-codice { font: 500 1.05rem var(--testo); margin: 8px 0 10px; }
+.sel-codice b { font: 700 1.9rem var(--titoli); margin-right: 8px; }
+.quote { display: grid; grid-template-columns: repeat(2, 1fr); gap: 6px 16px; margin: 0 0 16px; }
+.quote div { border-top: 1px solid var(--riga); padding-top: 4px; }
+.quote dt { font-size: .85rem; color: #56625C; }
+.quote dd { margin: 0; font-weight: 600; }
+.prev { display: flex; gap: 12px; align-items: end; flex-wrap: wrap; }
+.prev label { font-size: .9rem; font-weight: 600; display: grid; gap: 4px; }
+.prev input { width: 8.5rem; font: 500 1.1rem var(--testo); padding: 10px 12px; min-height: 48px; border: 1.5px solid var(--grafite); border-radius: 6px; background: #fff; }
+.btn { display: inline-flex; align-items: center; min-height: 48px; padding: 0 22px; background: var(--verde); color: #fff; font-weight: 600; text-decoration: none; border-radius: 6px; flex: 1; justify-content: center; }
+.btn:hover { background: var(--verde-scuro); }
+
+.elenco { grid-area: elenco; }
+.conta { font-weight: 600; margin: 0 0 8px; color: #56625C; }
+#lista { list-style: none; margin: 0; padding: 0; border-top: 2px solid var(--grafite); max-height: 520px; overflow-y: auto; }
+#lista li { display: grid; grid-template-columns: 1fr auto; grid-template-areas: "c m" "d s"; gap: 0 12px; padding: 12px 8px; border-bottom: 1px solid var(--riga); cursor: pointer; min-height: 44px; }
+#lista li b { grid-area: c; font: 700 1.2rem var(--titoli); }
+#lista li span:nth-of-type(1) { grid-area: d; color: #3C4742; }
+#lista li .m { grid-area: m; font-size: .9rem; font-weight: 600; color: var(--quota); }
+#lista li .s { grid-area: s; font-size: .9rem; color: #3C4742; }
+#lista li:hover { background: rgba(31, 107, 60, .06); }
+#lista li[aria-selected="true"] { background: var(--grafite); color: var(--carta); }
+#lista li[aria-selected="true"] span, #lista li[aria-selected="true"] .m { color: var(--nylon); }
+.vuoto { padding: 16px 0; }
+
+/* Vantaggi */
+.perche { display: grid; gap: 24px; border-top: 1.5px solid var(--grafite); }
+.vantaggi { list-style: none; margin: 0; padding: 0; display: grid; gap: 14px; }
+.vantaggi li { padding-left: 28px; position: relative; max-width: 46ch; }
+.vantaggi li::before { content: ""; position: absolute; left: 0; top: .35em; width: 14px; height: 14px; border: 3px solid var(--verde); border-radius: 50%; }
+.perche img { width: 100%; max-width: 460px; height: auto; mix-blend-mode: multiply; justify-self: center; }
+
+/* Tappi */
+.tappi { background: var(--grafite); color: var(--carta); max-width: none; }
+.tappi > * { max-width: 1148px; margin-left: auto; margin-right: auto; }
+.tappi p { max-width: 52ch; }
+.tappi-lista { list-style: none; padding: 0; margin: 24px auto; display: grid; grid-template-columns: 1fr; border-top: 1px solid #3F4A45; }
+.tappi-lista li { padding: 14px 0; border-bottom: 1px solid #3F4A45; font: 600 1.35rem var(--titoli); }
+.tappi .link { color: #9FD4B2; font-weight: 600; display: inline-block; min-height: 44px; }
+
+/* Azienda */
+.azienda-grid { display: grid; gap: 32px; }
+.azienda p { max-width: 60ch; margin: 0; }
+.linea { list-style: none; margin: 0; padding: 0 0 0 20px; border-left: 3px solid var(--verde); display: grid; gap: 20px; }
+.linea b { display: block; font: 700 2.2rem/1 var(--titoli); color: var(--verde); }
+
+/* Contatti */
+.contatti { border-top: 1.5px solid var(--grafite); }
+.contatti-grid { display: grid; gap: 24px; }
+address { font-style: normal; font-size: 1.15rem; }
+address a { font-weight: 600; }
+address small { color: #56625C; }
+iframe { width: 100%; height: 300px; border: 1.5px solid var(--grafite); border-radius: 6px; filter: grayscale(.6); }
+
+footer { padding: 32px 16px 40px; text-align: center; font-size: .9rem; color: #56625C; border-top: 1px solid var(--riga); }
+footer p { margin: 4px 0; }
+
+.barra { position: fixed; bottom: 0; left: 0; right: 0; z-index: 6; display: grid; grid-template-columns: 1fr 1.4fr 1fr; background: var(--grafite); }
+.barra a { color: var(--carta); text-decoration: none; text-align: center; padding: 18px 4px; font-weight: 600; }
+.barra .primario { background: var(--verde); color: #fff; }
+
+@media (min-width: 900px) {
+  body { padding-bottom: 0; }
+  .barra { display: none; }
+  .top { padding: 14px 32px; }
+  .top nav { display: flex; }
+  section { padding: 88px 32px; }
+  h1 { font-size: clamp(2.6rem, 4.4vw, 4.4rem); }
+  .hero { grid-template-columns: 1fr 1.05fr; grid-template-areas: "testo tavola" "elenco tavola"; column-gap: 56px; row-gap: 32px; align-items: start; padding-top: 56px; }
+  .tavola { position: sticky; top: 84px; padding: 24px; }
+  .quote { grid-template-columns: repeat(3, 1fr); }
+  .perche { grid-template-columns: 1fr 1fr; grid-template-rows: auto 1fr; column-gap: 56px; }
+  .perche h2 { grid-column: 1; }
+  .perche .vantaggi { grid-column: 1; }
+  .perche img { grid-column: 2; grid-row: 1 / 3; align-self: center; }
+  .tappi-lista { grid-template-columns: 1fr 1fr; column-gap: 48px; }
+  .azienda-grid { grid-template-columns: 1.4fr 1fr; gap: 64px; }
+  .contatti-grid { grid-template-columns: 1fr 1.3fr; }
+  iframe { height: 340px; }
+}
