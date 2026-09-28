@@ -131,3 +131,7 @@ footer p { margin: 4px 0; }
   .contatti-grid { grid-template-columns: 1fr 1.3fr; }
   iframe { height: 340px; }
 }
+
+.mappa { position: relative; }
+.mappa iframe { display: block; }
+.mappa::after { content: ""; position: absolute; left: 50%; top: 50%; width: 26px; height: 26px; margin: -26px 0 0 -13px; background: #1F6B3C; border: 3px solid #fff; border-radius: 50% 50% 50% 0; transform: rotate(-45deg); box-shadow: 0 2px 6px rgba(0,0,0,.35); pointer-events: none; }
